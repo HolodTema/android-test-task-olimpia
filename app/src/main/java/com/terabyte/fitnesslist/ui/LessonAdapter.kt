@@ -109,7 +109,7 @@ abstract class Holder(view: View) : RecyclerView.ViewHolder(view) {
 }
 
 class LessonWithDateHolder(val binding: ListItemLessonBinding) : Holder(binding.root) {
-    private val dateFormat = SimpleDateFormat("EEEE, dd MMMM", Locale.US)
+    private val dateFormat = SimpleDateFormat("EEEE, dd MMMM", Locale.getDefault())
 
     override fun bind(lesson: LessonListItem) {
         binding.colorIndicator.background.setTint(lesson.color.toColorInt())

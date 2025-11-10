@@ -12,8 +12,9 @@
         android:id="@+id/text_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="16dp"
-        android:paddingBottom="12dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/gray"
         android:textSize="18sp"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="понедельник, 09 января" />
@@ -29,7 +30,7 @@
     <View
         android:id="@+id/color_indicator"
         android:layout_width="6dp"
-        android:layout_height="70dp"
+        android:layout_height="75dp"
         android:background="@drawable/background_lesson_color_indicator"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_date" />
@@ -39,7 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="10dp"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/color_indicator"
         app:layout_constraintTop_toTopOf="@id/color_indicator"
@@ -50,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="10dp"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@id/color_indicator"
         app:layout_constraintStart_toEndOf="@+id/color_indicator"
@@ -62,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/text_start_time"
         app:layout_constraintStart_toEndOf="@+id/text_start_time"
@@ -72,7 +73,7 @@
         android:id="@+id/text_duration"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="4dp"
+        android:layout_marginEnd="4dp"
         android:gravity="center"
         android:textSize="14sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/text_lesson_name"
@@ -82,45 +83,44 @@
 
     <ImageView
         android:id="@+id/image_trainer_name"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
         android:layout_marginStart="4dp"
-        android:layout_marginBottom="4dp"
         android:src="@drawable/ic_trainer_name"
-        app:layout_constraintBottom_toBottomOf="@+id/color_indicator"
+        app:layout_constraintBottom_toBottomOf="@+id/text_end_time"
         app:layout_constraintStart_toEndOf="@+id/text_end_time"
+        app:layout_constraintTop_toTopOf="@id/text_end_time"
+        app:tint="@color/dark_gray"
         tools:layout_editor_absoluteY="4dp" />
 
     <TextView
         android:id="@+id/text_trainer_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
         android:layout_marginBottom="4dp"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/color_indicator"
+        app:layout_constraintBaseline_toBaselineOf="@id/text_end_time"
         app:layout_constraintStart_toEndOf="@+id/image_trainer_name"
         tools:text="Александров Александр" />
 
     <ImageView
         android:id="@+id/image_location"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="4dp"
-
+        android:layout_width="18dp"
+        android:layout_height="18dp"
         android:src="@drawable/ic_location"
-        app:layout_constraintBottom_toBottomOf="@+id/color_indicator"
-        app:layout_constraintStart_toEndOf="@+id/text_trainer_name" />
+        app:layout_constraintBottom_toBottomOf="@id/text_trainer_name"
+        app:layout_constraintStart_toEndOf="@+id/text_trainer_name"
+        app:layout_constraintTop_toTopOf="@id/text_trainer_name"
+        app:tint="@color/dark_gray" />
 
     <TextView
         android:id="@+id/text_lesson_place"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="4dp"
+        android:layout_marginEnd="4dp"
         android:layout_marginBottom="4dp"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/color_indicator"
+        app:layout_constraintBaseline_toBaselineOf="@+id/text_trainer_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/image_location"
         tools:text="Тренажерный зал" />

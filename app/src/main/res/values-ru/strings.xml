@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Olimpia Т3</string>
+
+    <string name="bottom_nav_item_classes">Занятия</string>
+    <string name="bottom_nav_item_notes">Заметки</string>
+    <string name="bottom_nav_item_add">Добавить</string>
+    <string name="bottom_nav_item_chat">Чат</string>
+    <string name="bottom_nav_item_more">Ещё</string>
+    <string name="schedule">Расписание</string>
+</resources>
