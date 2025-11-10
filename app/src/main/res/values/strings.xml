@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">FitnessList</string>
+
+    <string name="bottom_nav_item_classes">Classes</string>
+    <string name="bottom_nav_item_notes">Notes</string>
+    <string name="bottom_nav_item_add">Add new</string>
+    <string name="bottom_nav_item_chat">Chat</string>
+    <string name="bottom_nav_item_more">More</string>
+    <string name="schedule">Schedule</string>
+</resources>
