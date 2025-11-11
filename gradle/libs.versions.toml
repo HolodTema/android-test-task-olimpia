@@ -12,6 +12,7 @@ constraintlayout = "2.2.1"
 retrofit = "3.0.0"
 moshi = "1.15.2"
 lifecycle = "2.2.0"
+mockito = "5.20.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -26,6 +27,7 @@ squareup-retrofit = { group = "com.squareup.retrofit2", name = "retrofit", versi
 squareup-retrofit-moshi-converter = { group = "com.squareup.retrofit2", name = "converter-moshi", version.ref = "retrofit" }
 squareup-moshi-kotlin = { group = "com.squareup.moshi", name = "moshi-kotlin", version.ref = "moshi" }
 androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+mockito-core = { group = "org.mockito", name = "mockito-core", version.ref = "mockito"}
 
 
 [plugins]

@@ -39,6 +39,9 @@ android {
 }
 
 dependencies {
+    //Mockito
+    testImplementation(libs.mockito.core)
+
     //for ViewModel and LiveData using
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
 
