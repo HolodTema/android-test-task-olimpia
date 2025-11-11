@@ -19,7 +19,7 @@ class MyApplicationTest {
 
     @Mock
     private lateinit var mockMyApplication: MyApplication
-    
+
     private lateinit var mockedStaticRetrofitHelper: MockedStatic<RetrofitHelper>
 
     @Before
