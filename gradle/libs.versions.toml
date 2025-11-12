@@ -13,6 +13,8 @@ retrofit = "3.0.0"
 moshi = "1.15.2"
 lifecycle = "2.2.0"
 mockito = "5.20.0"
+androidxTestVersion = "1.7.0"
+robolectric = "4.13"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -28,7 +30,8 @@ squareup-retrofit-moshi-converter = { group = "com.squareup.retrofit2", name = "
 squareup-moshi-kotlin = { group = "com.squareup.moshi", name = "moshi-kotlin", version.ref = "moshi" }
 androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
 mockito-core = { group = "org.mockito", name = "mockito-core", version.ref = "mockito"}
-
+androidx-test-core = { group = "androidx.test", name = "core", version.ref = "androidxTestVersion" }
+robolectric = { group = "org.robolectric", name = "robolectric", version.ref = "robolectric" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
