@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.terabyte.fitnesslist.application.MyApplication
@@ -18,9 +19,7 @@ class LessonsFragment: Fragment() {
 
     private lateinit var fragmentComponent: FragmentComponent
 
-    private val viewModel: MainViewModel by lazy {
-        ViewModelProvider(requireActivity())[MainViewModel::class.java]
-    }
+    private val viewModel: MainViewModel by activityViewModels()
 
     private lateinit var binding: FragmentLessonsBinding
 

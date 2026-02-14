@@ -49,6 +49,9 @@ ksp {
 }
 
 dependencies {
+    //fragment lib to add delegate activityViewModels()
+    implementation(libs.androidx.fragment.ktx)
+
     //dagger
     implementation(libs.dagger)
     ksp(libs.dagger.compiler)
