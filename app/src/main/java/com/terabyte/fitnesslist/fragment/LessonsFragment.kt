@@ -1,5 +1,6 @@
 package com.terabyte.fitnesslist.fragment
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.terabyte.fitnesslist.application.MyApplication
 import com.terabyte.fitnesslist.databinding.FragmentLessonsBinding
 import com.terabyte.fitnesslist.ui.LessonAdapter
 import com.terabyte.fitnesslist.viewmodel.MainViewModel
@@ -19,6 +21,12 @@ class LessonsFragment: Fragment() {
     private lateinit var binding: FragmentLessonsBinding
 
     private lateinit var lessonAdapter: LessonAdapter
+
+    override fun onAttach(context: Context) {
+        (requireActivity().application as MyApplication).appComponent
+            .inject()
+        super.onAttach(context)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,

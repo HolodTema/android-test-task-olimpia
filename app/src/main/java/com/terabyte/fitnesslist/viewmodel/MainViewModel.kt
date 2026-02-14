@@ -11,14 +11,17 @@ import com.terabyte.fitnesslist.ui.LessonListItem
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class MainViewModel : ViewModel() {
+class MainViewModel @Inject constructor(
+    retrofitHelper: RetrofitHelper
+) : ViewModel() {
     val liveDataLessonListItems: MutableLiveData<List<LessonListItem>> = MutableLiveData()
 
     val liveDataBottomNavMenuId = MutableLiveData(R.id.menu_item_lessons)
 
     init {
-        RetrofitHelper.get().getLessonsInfo(CLUB_ID) {
+        retrofitHelper.getLessonsInfo(CLUB_ID) {
             if (it != null) {
                 lessonsInfoToLessonListItems(it)
             }

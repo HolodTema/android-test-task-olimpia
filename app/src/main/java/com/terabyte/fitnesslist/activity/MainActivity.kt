@@ -4,20 +4,36 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.terabyte.fitnesslist.R
+import com.terabyte.fitnesslist.application.MyApplication
 import com.terabyte.fitnesslist.databinding.ActivityMainBinding
+import com.terabyte.fitnesslist.di.component.ActivityComponent
 import com.terabyte.fitnesslist.fragment.LessonsFragment
 import com.terabyte.fitnesslist.fragment.NotesFragment
 import com.terabyte.fitnesslist.viewmodel.MainViewModel
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
+
+    @Inject
+    lateinit var activityComponentFactory: ActivityComponent.Factory
+    lateinit var activityComponent: ActivityComponent
+
+    //internal upcast ViewModelFactory from dependency graph
+    // to ViewModelProvider.Factory
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
     private val viewModel: MainViewModel by lazy {
-        ViewModelProvider(this)[MainViewModel::class.java]
+        ViewModelProvider(this, viewModelFactory)[MainViewModel::class.java]
     }
 
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        (application as MyApplication).appComponent.inject(this)
+        activityComponent = activityComponentFactory.create()
+        activityComponent.inject(this)
         super.onCreate(savedInstanceState)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
