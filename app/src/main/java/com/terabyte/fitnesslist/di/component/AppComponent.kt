@@ -13,7 +13,9 @@ import javax.inject.Singleton
 )
 interface AppComponent {
 
-    fun inject(activity: MainActivity)
+    fun activityComponentFactory(): ActivityComponent.Factory
+
+    fun fragmentComponentFactory(): FragmentComponent.Factory
 
     @Component.Factory
     interface Factory {

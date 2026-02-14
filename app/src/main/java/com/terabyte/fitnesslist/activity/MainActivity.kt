@@ -14,14 +14,11 @@ import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
-    @Inject
-    lateinit var activityComponentFactory: ActivityComponent.Factory
-    lateinit var activityComponent: ActivityComponent
+    private lateinit var activityComponent: ActivityComponent
 
-    //internal upcast ViewModelFactory from dependency graph
-    // to ViewModelProvider.Factory
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
+
     private val viewModel: MainViewModel by lazy {
         ViewModelProvider(this, viewModelFactory)[MainViewModel::class.java]
     }
@@ -29,8 +26,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        (application as MyApplication).appComponent.inject(this)
-        activityComponent = activityComponentFactory.create()
+        val appComponent = (application as MyApplication).appComponent
+        activityComponent = appComponent.activityComponentFactory().create()
         activityComponent.inject(this)
         super.onCreate(savedInstanceState)
 
