@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -44,6 +45,10 @@ android {
 }
 
 dependencies {
+    //dagger
+    implementation(libs.dagger)
+    ksp(libs.dagger.compiler)
+
     //for roboelectric
     testImplementation(libs.androidx.test.core)
     testImplementation(libs.robolectric)
